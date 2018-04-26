@@ -26,9 +26,30 @@ func getSession() *mgo.Session {
 var collection = getSession().DB("Ecommerce").C("products")
 
 
-func shoppingCartList
+func Index(w http.ResponseWriter, r *http.Request){
+		fmt.Fprintf(w, "Hola mundo desde mi servidor web con GO")
+}
+
+func shoppingCartList(w http.ResponseWriter, r *http.Request){
+	var results []Product
+			err := collection.Find(nil).Sort("-_id").All(&results)
+
+			if err != nil {
+				log.Fatal(err)
+			}else{
+				fmt.Println("Resultados: ", results)
+			}
+
+			responseMovies(w, 200, results)
+
+}
 
 
+
+func shoppingCartAddProduct(w http.ResponseWriter, r *http.Request){
+	decoder := json.NewDecoder(r.Body)
+
+<<<<<<< HEAD
 func productAdd(writer http.ResponseWriter, reader *http.Request){
 	decoder := json.NewDecoder(reader.Body)
 
@@ -87,3 +108,23 @@ func productRemove(w http.ResponseWriter, r *http.Request){
 
 	responseMovie(w, 200, movie_data)
 }
+=======
+	var product Product 
+	err := decoder.Decode(&product)
+
+	if(err != nil){
+		panic(err)
+	}
+
+	defer r.Body.Close()
+
+	err = collection.Insert(product)
+
+	if err != nil{
+		w.WriteHeader(500)
+		return
+	}
+
+	responseMovie(w, 200, product)
+}
+>>>>>>> kaku
