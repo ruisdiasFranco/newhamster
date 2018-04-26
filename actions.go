@@ -26,8 +26,44 @@ func getSession() *mgo.Session {
 var collection = getSession().DB("Ecommerce").C("products")
 
 
-func shoppingCartList
+func Index(w http.ResponseWriter, r *http.Request){
+		fmt.Fprintf(w, "Hola mundo desde mi servidor web con GO")
+}
+
+func shoppingCartList(w http.ResponseWriter, r *http.Request){
+	var results []Product
+			err := collection.Find(nil).Sort("-_id").All(&results)
+
+			if err != nil {
+				log.Fatal(err)
+			}else{
+				fmt.Println("Resultados: ", results)
+			}
+
+			responseMovies(w, 200, results)
+
+}
 
 
 
-func shoppingCartAddProduct
+func shoppingCartAddProduct(w http.ResponseWriter, r *http.Request){
+	decoder := json.NewDecoder(r.Body)
+
+	var product Product 
+	err := decoder.Decode(&product)
+
+	if(err != nil){
+		panic(err)
+	}
+
+	defer r.Body.Close()
+
+	err = collection.Insert(product)
+
+	if err != nil{
+		w.WriteHeader(500)
+		return
+	}
+
+	responseMovie(w, 200, product)
+}
