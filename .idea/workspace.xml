@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a24d4baa-d09a-42a1-b49c-be642c88074f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/dato.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions.go" beforeDir="false" afterPath="$PROJECT_DIR$/actions.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/product.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoppingCart.go" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingCart.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +17,8 @@
       <file leaf-file-name="actions.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/actions.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="195" column="25" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="25" />
+            <state relative-caret-position="173">
+              <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
               <folding>
                 <element signature="e#20#142#0" expanded="true" />
               </folding>
@@ -32,8 +29,8 @@
       <file leaf-file-name="routes.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state relative-caret-position="272">
+              <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -87,6 +84,8 @@
     <findStrings>
       <find>remove</find>
       <find>bson</find>
+      <find>showProduct</find>
+      <find>products</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="C:\Go" />
@@ -101,11 +100,11 @@
         <option value="$USER_HOME$/Desktop/routes.go" />
         <option value="$USER_HOME$/Desktop/curso-go/api-rest/actions.go" />
         <option value="$PROJECT_DIR$/main.go" />
-        <option value="$PROJECT_DIR$/routes.go" />
         <option value="$PROJECT_DIR$/product.go" />
         <option value="$PROJECT_DIR$/shoppingCart.go" />
         <option value="$PROJECT_DIR$/Datos.go" />
         <option value="$PROJECT_DIR$/dato.go" />
+        <option value="$PROJECT_DIR$/routes.go" />
         <option value="$PROJECT_DIR$/actions.go" />
       </list>
     </option>
@@ -183,7 +182,7 @@
     <frame x="1912" y="-77" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979253" visible="true" weight="0.26066098" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4979253" visible="true" weight="0.26066098" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Database" order="5" />
@@ -191,7 +190,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3093682" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3093682" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -445,15 +444,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="272">
+          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/actions.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="195" column="25" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="25" />
+        <state relative-caret-position="173">
+          <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
           <folding>
             <element signature="e#20#142#0" expanded="true" />
           </folding>

@@ -37,7 +37,7 @@ var routes = Routes{
 		"product",
 		"GET",
 		"/product",
-		showProduct,
+		productsList,
 	},
 	Route{
 		"productShow",

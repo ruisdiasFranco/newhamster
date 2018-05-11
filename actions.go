@@ -167,6 +167,19 @@ func shoppingCartUpdate(w http.ResponseWriter, r *http.Request){
 
 //-----------------------------------------------------------PRODUCTS FUNCTIONS
 
+func productsList(w http.ResponseWriter, r *http.Request){
+	var results []Product
+	err := productsCollection.Find(nil).Sort("-_id").All(&results)
+
+	if err != nil {
+		log.Fatal(err)
+	}else{
+		fmt.Println("Resultados: ", results)
+	}
+
+	responseProducts(w, 200, results)
+}
+
 func showProduct(w http.ResponseWriter, r *http.Request){
 	params := mux.Vars(r)
 	productId := params["id"]
