@@ -8,6 +8,7 @@ import (
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"gopkg.in/mgo.v2/bson"
+	"strconv"
 )
 
 //-----------------------------------------------------COLLECTION OF SHOPPINGCART
@@ -68,25 +69,31 @@ func shoppingCartList (writer http.ResponseWriter, request* http.Request){
 }
 
 func addProductToShoppingCart(w http.ResponseWriter, r *http.Request){
-	decoder := json.NewDecoder(r.Body)
-
-	var productData Product
-	err := decoder.Decode(&productData)
-
-	if(err != nil){
-		panic(err)
-	}
+	product_id := r.FormValue("producto")
 
 	defer r.Body.Close()
+	if !bson.IsObjectIdHex(product_id) {
+		w.WriteHeader(404)
+		fmt.Println("ERROR")
+		return
+	}
 
-	err = shoppingCartItems.Insert(productData)
+	oid := bson.ObjectIdHex(product_id)
+	fmt.Println(oid)
+
+	cantidad, _ := strconv.ParseInt(r.FormValue("cantidad"), 10, 0)
+	datos := Dato{cantidad ,string(oid)}
+	fmt.Println(datos)
+	err := shoppingCartItems.Insert(datos)
 
 	if err != nil{
 		w.WriteHeader(500)
 		return
 	}
+
 	var results []ShoppingCart
 	shoppingCartItems.Find(nil).Sort("-_id").All(&results)
+
 	responseShoppingCart(w, 200, results)
 }
 

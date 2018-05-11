@@ -1,7 +1,7 @@
 package main
 
 type ShoppingCart struct{
-		cantidad string
+		cantidad int
 		producto Product
 
 }
