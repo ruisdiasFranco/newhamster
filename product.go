@@ -1,4 +1,4 @@
-package newhamster
+package main
 
 
 type Product struct {

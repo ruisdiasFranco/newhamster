@@ -1,8 +1,8 @@
-package newhamster
+package main
 
 type ShoppingCart struct{
 		cantidad string
-		producto product
+		producto Product
 
 }
 

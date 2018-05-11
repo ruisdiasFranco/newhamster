@@ -1,4 +1,4 @@
-package newhamster
+package main
 import(
 	"net/http"
 	"github.com/gorilla/mux"

@@ -1,4 +1,4 @@
-package newhamster
+package main
 
 import (
 	"fmt"
@@ -172,7 +172,7 @@ func showProduct(w http.ResponseWriter, r *http.Request){
 	oid := bson.ObjectIdHex(productId)
 
 	results := Product{}
-	err := productsCollection.FindId(oid).One(%results)
+	err := productsCollection.FindId(oid).One(&results)
 
 	if err != nil{
 		w.WriteHeader(404)
@@ -214,7 +214,7 @@ func updateProduct(w http.ResponseWriter, r *http.Request){
 	}
 
 	oid := bson.ObjectIdHex(productId)
-	decoder := json.NewDecoder(r.body)
+	decoder := json.NewDecoder(r.Body)
 
 	var productData Product
 	err := decoder.Decode(&productData)
