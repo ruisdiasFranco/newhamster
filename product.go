@@ -1,4 +1,4 @@
-package models
+package newhamster
 
 
 type Product struct {

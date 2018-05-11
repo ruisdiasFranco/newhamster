@@ -1,4 +1,4 @@
-package models
+package newhamster
 
 type ShoppingCart struct{
 		cantidad string
